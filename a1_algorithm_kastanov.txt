@@ -1,0 +1,96 @@
+Algorithm for Assignment 1
+
+(1) Checks input data is digit or includes alphabet.
+    If it is digit returns True otherwise it returns False.
+
+(2) Takes date and splits it with '-' and stores seperately 
+    year in str_year variable, month in str_month variable,
+    day in str_day variable.
+
+(3) Converts and stores string year, month and day as integer in
+    year, month and day variables.
+
+(4) Calculates leap year using modulus and year variable.
+    lyear = year % 4 if we get leyear as 0 it will return 
+    status as True if not False. Then we do another calculation
+    lyear = year % 100 in this case if we get lyear as 0 it return False.
+    Last calculation is lyear = year % 400. Here if we get lyear 0 
+    it will return True. 
+
+(5) Storing months and number of days on each month in mon_days list.
+    Month and days are stored manually in mon_days list except february.
+    We store days of february as variable feb_max in mon_days list. Then it
+    will calculate leap year. If leap year will get True feb_max variable will
+    be equal to 29 else it will be equal to 28.
+
+(6) It will check length of entered date. If it is not equal 10 it will print
+    warning message indicating that "Error: wrong date entered" and then exit.
+
+(7) It will again use is_digit function to split date with '-' and store them as 
+    integer in year, month and day variables.
+
+(8) If month variable is equal to 0 or greater than 12 it will print error 
+    indicating that wrong month entered and exit. At the same time if day 
+    is equal to 0 or greater than available days of that month it will print
+    error message that wrong day entered and then exit.
+
+(9) Starting calculation of days after current day. It will use temp_day
+    variable storing current day + 1.
+
+(10) If tmp_day will be greater than that month highest day then it will
+     use modulus to divide tmp_day to that month highest day and store it
+     in to_day variable. At the same time it will add +1 to current month 
+     and store in tmp_month variable.
+
+(11) If tmp_day is not greater than highest day of that month to_day will 
+     be equal to tmp_day and temp will be equal to that month.
+
+(12) If tmp_month will be greater than 12 then to_month will be equal to 1 
+     and will and +1 to year. if tmp_month will not greater than 12 then 
+     to_month will be equal to tmp_month
+
+(12) In last step it will store conclution in next_date variable as string 
+     and return result it as next_date to after function.
+
+(13) Calculation of before day. It will create variable previous_month and store
+     month - 1 here. If previous_month will be 0 it will be eqaul to 12.
+
+(14) It will create another variable tmp_day and store current day - 1. If tmp_day
+     variable is equal to 0 it will get value from mon_max list last day 
+     of previous month and tmp_month variable will be equal to current month -1.
+     Otherwise, to_day variable will be equal to tmp_day and tmp_month to current month.
+
+(15) If tmp_month variable will be equal to 0 it will get value 12 and year variable
+     will be year - 1. Otherise, to_month will be equal to tmp_month.
+
+(16) At last of before functon previous_date will store result of above process 
+     as string and return it to before function.
+
+(17) Calculating before or after days by using command line arguments.If number
+     of arguments are more than 5 or equal and less than 2 it will use usage
+     function to print Usage: a1_kastanov.py [--step] YYYY-MM-DD +/-n" and exit.
+
+(18) if first argument is eqaul to --step then step variable will be equal True
+     and date variable will be eqaual to sys.argv[2] and days eqaul to sys.argv[3].
+   
+(19) if first argument is not eqaul to --step then step variable will be equal False
+     and date variable will be eqaual to sys.argv[1] and days eqaul to sys.argv[2].
+
+(20) If days are positive it and step is equal to True then it will loop within 
+     while until days variable will be 0. It will print date on each loop and 
+     days variable will be lowered by 1.   
+
+(21) If days are positive but step is not eqaul to True it will use while loop 
+     again, however will print last date of loop calculation.
+
+(22) If days are negative and step is True it will be looped within while until 
+     days variable is 0. It will print previous day on each loop and days will
+     be added 1 to make negative days 0.
+
+(23) If days are negative but step is False it will be looped within while but 
+     date will printed in at the end of loop. Days variable again will be added
+     +1.
+
+
+
+  
